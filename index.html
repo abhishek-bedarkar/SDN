@@ -1,0 +1,130 @@
+
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="wz_jsgraphics.js"></script>
+<style>
+#div1 {
+    width: 750px;
+    height: 350px;
+   /* padding: 10px;*/
+    border: 1px solid #aaaaaa;
+}
+.header{
+    background: #D9D9D9; 
+}
+.left-side{
+    background: #D9D9D9;
+    margin-left: -15px;
+    width: 65%;
+}
+.logo-adjust{
+    margin: 10px;
+}
+#mydiv1{
+    position: absolute;
+}
+.drag1 {
+    
+    position:absolute;
+    
+    
+}
+</style>
+<script>
+    var x0,y0,x1,y1;
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+    
+}
+
+
+
+function drop(ev) {
+    var pos1,pos2,pos3,pos4;
+    ev.preventDefault();  
+    var data = ev.dataTransfer.getData("text");
+    var nodeCopy = document.getElementById(data).cloneNode(true);
+    nodeCopy.setAttribute("class", "drag1");
+    
+    
+    var div=document.getElementById("div1");
+    var rect = div.getBoundingClientRect();
+     
+     var divposx = rect.left;/* div position pixels to calculate relative distance*/
+     var divposy = rect.top;
+    
+    
+    var posx = ev.clientX;
+    var posy = ev.clientY;
+    
+    div.appendChild(nodeCopy);/* appended child dynamically*/
+    nodeCopy.style.left = posx-divposx-(56/2);/* width/2 and height/2 to arrange in center */
+    nodeCopy.style.top = posy-divposy-(70/2);
+   
+   
+    
+    }
+    
+ /* to see pixels of div and manipulate*/
+  function onrandomclick(e){
+      e= e || window.event;
+      console.log(e.clientX+"\t" +e.clientY);
+       x0 = e.clientX;
+       y0 = e.clientY;
+      document.onmouseup = onrandomclicktwo;
+  }
+    function randomclicktwo(e){
+       x1 = e.clientX;
+       y1 = e.clientY;
+      var jg = new jsGraphics("div1");    
+        jg.setColor("red");
+        jg.drawLine(x0, y0, x1, y1);
+        jg.paint();
+    }
+  document.onmouseup = onrandomclick;
+
+</script>
+</head>
+<body>
+        <div class="col-lg-12">
+            <div class="header"><button>File</button><button>Edit</button><button>Run</button><button>Help</button></div>
+            <div id="mydiv1">
+                <div class="col-lg-2">
+                    <div class="left-side">
+                        <div draggable="true" ondragstart="drag(event)">
+                            <img class="logo-adjust" id="drag1" src="images/switch.png"  width="56" height="69">
+                        </div>
+                        <div draggable="true" ondragstart="drag(event)">
+                            <img class="logo-adjust" id="drag2" src="images/controller.png" width="56" height="69">
+                        </div>
+                        <div draggable="true" ondragstart="drag(event)">
+                            <img class="logo-adjust" id="drag3" src="images/networks.png" width="56" height="69">
+                        </div>
+                        <div draggable="true" ondragstart="drag(event)">
+                            <img class="logo-adjust" id="drag4" src="images/sdnc.png" width="56" height="150">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="right-side">
+                        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    </div>
+                </div>
+             </div>
+        </div>
+
+</body>
+</html>
+
