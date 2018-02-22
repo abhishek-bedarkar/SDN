@@ -1,0 +1,28 @@
+img{
+    height: 100px;
+    width: 100px;
+    
+   
+
+
+
+}
+.dashboard{
+    height: 500px;
+    width: 100px;
+    border-style: groove;
+    color: lightgrey;
+    padding: 10px;
+    float: left;
+    
+    
+}
+.workspace{
+    
+    float: left;
+    height: 520px;
+    width: 80%;
+    border-style: groove;
+    color: lightgrey;
+    margin-left: 20px;
+}
