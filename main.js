@@ -26,9 +26,12 @@ function drop(ev){
     
     
     /* appended child dynamically*/
-    nodeCopy.style.left = posx-divposx;/* width/2 and height/2 to arrange in center */
-    nodeCopy.style.top = posy-divposy;
-   div.appendChild(nodeCopy);
+     div.appendChild(nodeCopy);
+    nodeCopy.style.position="absolute";
+    nodeCopy.style.left = (posx-divposx)+105;/* width/2 and height/2 to arrange in center */
+    nodeCopy.style.top = (posy-divposy)+25;
+    nodeCopy.cloneNode(false);
+  
    
 }
 
