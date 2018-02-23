@@ -1,7 +1,13 @@
+var isSelected = {
+    "HOST":0,
+    "SWITCHES":0,
+    "ROUTER":0,
+    "CONTROLLER":0,
+    "WIRE":0
+};
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
-    
 }
 
 
@@ -46,4 +52,69 @@ document.onmouseup = onrandomclick;
 
 function allowDrop(ev) {
     ev.preventDefault();
+}
+
+function sele(id){
+    if(id=="host"){
+        isSelected.HOST = 1;
+        isSelected.SWITCHES = 0;
+        isSelected.ROUTER = 0;
+        isSelected.CONTROLLER = 0;
+        isSelected.WIRE = 0;
+        document.getElementById(id).parentElement.style.backgroundColor = "beige";
+        document.getElementById("switches").parentElement.style.backgroundColor = "white";
+        document.getElementById("router").parentElement.style.backgroundColor = "white";
+        document.getElementById("controller").parentElement.style.backgroundColor = "white";
+        document.getElementById("wire").parentElement.style.backgroundColor = "white";
+    }
+    else if(id=="switches"){
+        isSelected.HOST = 0;
+        isSelected.SWITCHES = 1;
+        isSelected.ROUTER = 0;
+        isSelected.CONTROLLER = 0;
+        isSelected.WIRE = 0;
+        document.getElementById("host").parentElement.style.backgroundColor = "white";
+        document.getElementById(id).parentElement.style.backgroundColor = "beige";
+        document.getElementById("router").parentElement.style.backgroundColor = "white";
+        document.getElementById("controller").parentElement.style.backgroundColor = "white";
+        document.getElementById("wire").parentElement.style.backgroundColor = "white";
+    }
+    else if(id=="router"){
+        isSelected.HOST = 0;
+        isSelected.SWITCHES = 0;
+        isSelected.ROUTER = 1;
+        isSelected.CONTROLLER = 0;
+        isSelected.WIRE = 0;
+        document.getElementById("host").parentElement.style.backgroundColor = "white";
+        document.getElementById("switches").parentElement.style.backgroundColor = "white";
+        document.getElementById(id).parentElement.style.backgroundColor = "beige";
+        document.getElementById("controller").parentElement.style.backgroundColor = "white";
+        document.getElementById("wire").parentElement.style.backgroundColor = "white";
+    }
+    else if(id=="controller"){
+        isSelected.HOST = 0;
+        isSelected.SWITCHES = 0;
+        isSelected.ROUTER = 0;
+        isSelected.CONTROLLER = 1;
+        isSelected.WIRE = 0;
+        document.getElementById("host").parentElement.style.backgroundColor = "white";
+        document.getElementById("switches").parentElement.style.backgroundColor = "white";
+        document.getElementById("router").parentElement.style.backgroundColor = "white";
+        document.getElementById(id).parentElement.style.backgroundColor = "beige";
+        document.getElementById("wire").parentElement.style.backgroundColor = "white";
+    }
+    else if(id=="wire"){
+        isSelected.HOST = 0;
+        isSelected.SWITCHES = 0;
+        isSelected.ROUTER = 0;
+        isSelected.CONTROLLER = 0;
+        isSelected.WIRE = 1;
+        document.getElementById("host").parentElement.style.backgroundColor = "white";
+        document.getElementById("switches").parentElement.style.backgroundColor = "white";
+        document.getElementById("router").parentElement.style.backgroundColor = "white";
+        document.getElementById("controller").parentElement.style.backgroundColor = "white";
+        document.getElementById(id).parentElement.style.backgroundColor = "beige";
+    }
+
+    console.log(isSelected);
 }

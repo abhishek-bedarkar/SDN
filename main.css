@@ -1,16 +1,10 @@
 img{
     height: 100px;
     width: 100px;
-    
-    
-   
-
-
-
 }
 .dashboard{
-    height: 500px;
-    width: 100px;
+    height: 550px;
+    width: 110px;
     border-style: groove;
     color: lightgrey;
     padding: 10px;
@@ -18,12 +12,23 @@ img{
     
     
 }
+.selectDashboard{
+    padding: 5px;
+}
 .workspace{
     
     float: left;
-    height: 520px;
+    height: 570px;
     width: 80%;
     border-style: groove;
     color: lightgrey;
     margin-left: 20px;
+}
+.toolbar{
+    background-color: beige;
+    padding: 10px;
+}
+button {
+    background-color: white;
+    border-radius: 5px;
 }
