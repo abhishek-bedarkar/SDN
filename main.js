@@ -32,14 +32,41 @@ function drop(ev){
     
     
     /* appended child dynamically*/
-     div.appendChild(nodeCopy);
+    div.appendChild(nodeCopy);
     nodeCopy.style.position="absolute";
     nodeCopy.style.left = (posx-divposx)+105;/* width/2 and height/2 to arrange in center */
     nodeCopy.style.top = (posy-divposy)+25;
-    nodeCopy.cloneNode(false);
+    nodeCopy.id="op";
+  
   
    
 }
+
+
+
+
+// Trigger action when the contexmenu is about to be shown
+
+$(document).bind("contextmenu",function(e){
+  e.preventDefault();
+  console.log(e.pageX + "," + e.pageY);
+  $("#cntnr").css("left",e.pageX);
+  $("#cntnr").css("top",e.pageY);
+ // $("#cntnr").hide(100);        
+  $("#cntnr").fadeIn(200,startFocusOut());      
+});
+
+function startFocusOut(){
+  $(document).on("click",function(){
+  $("#cntnr").hide();        
+  $(document).off("click");
+  });
+}
+
+$("#items > li").click(function(){
+$("#op").text("You have selected "+$(this).text());
+});
+
 
 
 
