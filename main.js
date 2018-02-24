@@ -16,6 +16,7 @@ function drop(ev){
     var pos1,pos2,pos3,pos4;
     ev.preventDefault();  
     var data = ev.dataTransfer.getData("text");
+    console.log(data);
     var nodeCopy = document.getElementById(data).cloneNode(true);
    
     
@@ -80,6 +81,17 @@ document.onmouseup = onrandomclick;
 function allowDrop(ev) {
     ev.preventDefault();
 }
+
+
+// cut funtion 
+
+function cut_element(){
+console.log("cut method called");
+   
+    console.log();
+    
+}
+
 
 function sele(id){
     if(id=="host"){
