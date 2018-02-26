@@ -1,0 +1,89 @@
+img {
+    width: 100px;
+    height: 100px;
+}
+#dashboard {
+    float: left;
+    border: 3px solid gray;
+    cursor: grab;
+    margin-left: 8px;
+}
+#workspace {
+    float: left;
+    border: 3px solid gray;
+    margin-left: 15px;
+    width: 85%;
+    height: 550px;
+    cursor: pointer;
+}
+div {
+    padding: 5px;
+}
+.toolbar {
+    background-color: #E0E0E0;
+    padding: 10px;
+    border-radius: 5px;
+}
+.notes {
+    float: right;
+    display: table-cell;
+    border: 1px solid gray;
+    padding: 5px;
+    text-align:justify;
+    color: grey;
+    border-radius: 5px;
+    font-size: 15px;
+}
+button {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal-content{
+    background-color: #f4f4f4;
+    margin:20% auto;
+    padding: 10px;
+    width: 400px;
+}
+.closeBtn{
+    color: gray;
+    float: right;
+    font-size: 30px;
+}
+.closeBtn:hover{
+    cursor: pointer;
+    color: black;
+}
+.modal-header{
+    background-color: gainsboro;
+    color:black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+.modal-footer{
+    background-color: gainsboro;
+    color:black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+.modal-footer>button{
+    color: white;
+    background-color: dimgrey;
+    padding: 5px;
+    border-radius: 5px;
+}

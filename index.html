@@ -1,69 +1,105 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="wz_jsgraphics.js"></script>
+        
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link rel="stylesheet" type="text/css" href="main.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script
-			  src="https://code.jquery.com/jquery-3.3.1.js"
-			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-			  crossorigin="anonymous"></script>
-    
-    
-<script type="text/javascript"  src="main.js"></script>
-    
-</head>
-<body>
-        <!-- toolbar -->
-       <div class="toolbar">
-            
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       
+    </head>
+    <body id="b">
+        
+        <div class="toolbar">
            <button>File</button>
            <button>Edit</button>
            <button>Run</button>
            <button>Help</button>
-    
-    
-       </div>
+        </div>
+        <br>
+        <br>
         
-        <br>
-        <br>
-        <div>
-
-            <!-- dashboard -->
-            <div class="dashboard">
+        <!-- dashboard and workspace -->
+            <div id="dashboard">
                 
-                <div class="selectDashboard"><img src="images/index.jpg" id="host" draggable="true" ondragstart="drag(event)" onmousedown="sele('host')"></div>
-                <div class="selectDashboard"><img src="images/switch.jpg" id="switches" draggable="true" ondragstart="drag(event)" onmousedown="sele('switches')"></div>
-                <div class="selectDashboard"><img src="images/router.jpg" id="router"  draggable="true" ondragstart="drag(event)" onmousedown="sele('router')"></div>
-                <div class="selectDashboard"><img src="images/controller.jpg" id="controller"  draggable="true" ondragstart="drag(event)" onmousedown="sele('controller')"></div>
-                <div class="selectDashboard"><img src="images/line.png" id="wire" onmousedown="sele('wire')"></div>
-                  
+                <div id="divHost"><img id="imgHost" src="images/host.jpg" onmouseup="show(event)" onmouseover="tooltip(event)"></div>
+                <div id="divSwitch"><img id="imgSwitch" src="images/switch.jpg" onmouseup="show(event)" onmouseover="tooltip(event)"></div>
+                <div id="divRouter"><img id="imgRouter" src="images/router.jpg" onmouseup="show(event)" onmouseover="tooltip(event)"></div>
+                <div id="divController"><img id="imgController" src="images/controller.jpg" onmouseup="show(event)" onmouseover="tooltip(event)"></div>
+                <div id="divWire"><img id="imgWire" src="images/line.png" onclick="show(event)" onmouseover="tooltip(event)"></div>
             </div>
-            
-            
-            <!-- workspace -->
-            <div class="workspace" id="workspace" ondrop="drop(event)" ondragover="allowDrop(event)">
-                
-                    
-                <!-- cut and preference -->
-                  <div id='cntnr'>
-                    <ul id='items'>
-                      <li>Options</li>
-                    
-                    </ul>
-                    <hr />
-                    <ul id='items'>
-                        <li><a onclick="cut_element()">Cut</a></li>
-                      <li><a>Preferences</a></li>  
-                    </ul>
-                  </div>
-
-
-
-
+            <div id="workspace">
+                <div class="notes">
+                    <li>Right click for Deleting</li>
+                    <li>Left Click for Preferences</li>
+                    <li>Select wire icon for Connection</li>
+                </div>
             </div>
-              
-
-    </div>
+        
+        
+        <!-- modals --> 
+        
+        
+        
+        <div id="hostModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <label>Preferences</label>
+                    <span id="hostcloseBtn" onclick="closeModal('hostModal')" class="closeBtn">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <td>Name</td>
+                            <td><input id="HMName" type=text></td>
+                        </tr>
+                        <tr>
+                            <td>Controller Port</td>
+                            <td><input id="HMControllerPort" type=text></td>
+                        </tr>
+                        <tr>
+                            <td>Controller Type</td>
+                            <td>
+                                <select id="HMControllerType">
+                                    <option value="Ovs">Ovs Controller</option>
+                                    <option value="In">In band Controller</option>
+                                    <option value="Remote">Remote Controller</option>
+                                    <option value="Open">Open flow Reference</option>
+                                </select>    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Protocol</td>
+                            <td>
+                                <select id="HmProtocol">
+                                    <option value="SSL">SSL</option>
+                                    <option value="TCP">TCP</option>
+                                </select>    
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="padding:8px;background:#c4c4c4;border-radius: 5px;margin-top: 5px;">
+                        Remote/Inband Controller<br>
+                        <table>
+                            <tr>
+                                <td>IP Address</td>
+                                <td><input id="HMIPAddress" type="text"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="hostModalSave" onclick="hostSaveClicked()">Save</button>
+                </div>
+            </div>   
+        </div>
+        
+        
     </body>
 </html>
