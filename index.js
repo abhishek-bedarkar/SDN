@@ -23,8 +23,8 @@ function init_Enviroment(){
         "CONTROLLER":0,
         "WIRE":0
     };
-     wire=[];
-     comp_selected=0;
+    wire=[];
+    comp_selected=0;
     defaultHostInfo = function(hName,controllerPort,ControllerType,Protocol,IPAddress)
     {
         this.Name = hName;
@@ -318,10 +318,10 @@ function toggleHighlight(id1){
         isSelected.CONTROLLER = 0;
         isSelected.WIRE = 0;
         document.getElementById(id1).parentElement.style.backgroundColor = "#C0C0C0";
-        document.getElementById("imgSwitch").parentElement.style.backgroundColor = "white";
-        document.getElementById("imgRouter").parentElement.style.backgroundColor = "white";
-        document.getElementById("imgController").parentElement.style.backgroundColor = "white";
-        document.getElementById("imgWire").parentElement.style.backgroundColor = "white";
+        document.getElementById("imgSwitch").parentElement.style.backgroundColor = "beige";
+        document.getElementById("imgRouter").parentElement.style.backgroundColor = "beige";
+        document.getElementById("imgController").parentElement.style.backgroundColor = "beige";
+        document.getElementById("imgWire").parentElement.style.backgroundColor = "beige";
     }
     else if(id1.startsWith("imgSwitch")){
         isSelected.HOST = 0;
@@ -329,11 +329,11 @@ function toggleHighlight(id1){
         isSelected.ROUTER = 0;
         isSelected.CONTROLLER = 0;
         isSelected.WIRE = 0;
-        document.getElementById("imgHost").parentElement.style.backgroundColor = "white";
+        document.getElementById("imgHost").parentElement.style.backgroundColor = "beige";
         document.getElementById(id1).parentElement.style.backgroundColor = "#C0C0C0";
-        document.getElementById("imgRouter").parentElement.style.backgroundColor = "white";
-        document.getElementById("imgController").parentElement.style.backgroundColor = "white";
-        document.getElementById("imgWire").parentElement.style.backgroundColor = "white";
+        document.getElementById("imgRouter").parentElement.style.backgroundColor = "beige";
+        document.getElementById("imgController").parentElement.style.backgroundColor = "beige";
+        document.getElementById("imgWire").parentElement.style.backgroundColor = "beige";
     }
     else if(id1.startsWith("imgRouter")){
         isSelected.HOST = 0;
@@ -341,11 +341,11 @@ function toggleHighlight(id1){
         isSelected.ROUTER = 1;
         isSelected.CONTROLLER = 0;
         isSelected.WIRE = 0;
-        document.getElementById("imgHost").parentElement.style.backgroundColor = "white";
-        document.getElementById("imgSwitch").parentElement.style.backgroundColor = "white";
+        document.getElementById("imgHost").parentElement.style.backgroundColor = "beige";
+        document.getElementById("imgSwitch").parentElement.style.backgroundColor = "beige";
         document.getElementById(id1).parentElement.style.backgroundColor = "#C0C0C0";
-        document.getElementById("imgController").parentElement.style.backgroundColor = "white";
-        document.getElementById("imgWire").parentElement.style.backgroundColor = "white";
+        document.getElementById("imgController").parentElement.style.backgroundColor = "beige";
+        document.getElementById("imgWire").parentElement.style.backgroundColor = "beige";
     }
     else if(id1.startsWith("imgController")){
         isSelected.HOST = 0;
@@ -353,11 +353,11 @@ function toggleHighlight(id1){
         isSelected.ROUTER = 0;
         isSelected.CONTROLLER = 1;
         isSelected.WIRE = 0;
-        document.getElementById("imgHost").parentElement.style.backgroundColor = "white";
-        document.getElementById("imgSwitch").parentElement.style.backgroundColor = "white";
-        document.getElementById("imgRouter").parentElement.style.backgroundColor = "white";
+        document.getElementById("imgHost").parentElement.style.backgroundColor = "beige";
+        document.getElementById("imgSwitch").parentElement.style.backgroundColor = "beige";
+        document.getElementById("imgRouter").parentElement.style.backgroundColor = "beige";
         document.getElementById(id1).parentElement.style.backgroundColor = "#C0C0C0";
-        document.getElementById("imgWire").parentElement.style.backgroundColor = "white";
+        document.getElementById("imgWire").parentElement.style.backgroundColor = "beige";
     }
     else if(id1.startsWith("imgWire")){
         isSelected.HOST = 0;
@@ -365,10 +365,10 @@ function toggleHighlight(id1){
         isSelected.ROUTER = 0;
         isSelected.CONTROLLER = 0;
         isSelected.WIRE = 1;
-        document.getElementById("imgHost").parentElement.style.backgroundColor = "white";
-        document.getElementById("imgSwitch").parentElement.style.backgroundColor = "white";
-        document.getElementById("imgRouter").parentElement.style.backgroundColor = "white";
-        document.getElementById("imgController").parentElement.style.backgroundColor = "white";
+        document.getElementById("imgHost").parentElement.style.backgroundColor = "beige";
+        document.getElementById("imgSwitch").parentElement.style.backgroundColor = "beige";
+        document.getElementById("imgRouter").parentElement.style.backgroundColor = "beige";
+        document.getElementById("imgController").parentElement.style.backgroundColor = "beige";
         document.getElementById(id1).parentElement.style.backgroundColor = "#C0C0C0";
     }
 

@@ -1,20 +1,23 @@
 img {
     width: 100px;
     height: 100px;
+ 
 }
 #dashboard {
     float: left;
     border: 3px solid gray;
     cursor: grab;
     margin-left: 8px;
+    background-color: beige;
 }
 #workspace {
     float: left;
     border: 3px solid gray;
     margin-left: 15px;
-    width: 85%;
+    width: 80%;
     height: 550px;
     cursor: pointer;
+    background-color: beige;
 }
 div {
     padding: 5px;
